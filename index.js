@@ -24,7 +24,11 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://mern-social-app.onrender.com"],
+  })
+);
 
 /* Getting the static files */
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
