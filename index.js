@@ -26,7 +26,10 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://mern-social-app.onrender.com"],
+    origin: [
+      "http://localhost:3000",
+      "https://mern-social-app-v5vd.onrender.com",
+    ],
   })
 );
 
